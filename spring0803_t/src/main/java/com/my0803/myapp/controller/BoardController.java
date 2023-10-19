@@ -1,22 +1,26 @@
 package com.my0803.myapp.controller;
 
+import java.io.IOException;
 import java.net.InetAddress;
 import java.util.ArrayList;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
 import com.my0803.myapp.domain.BoardVo;
 import com.my0803.myapp.domain.PageMaker;
 import com.my0803.myapp.domain.SearchCriteria;
 import com.my0803.myapp.service.BoardService;
 import com.my0803.myapp.util.UploadFileUtiles;
 
-@Controller // 컨트롤러 용도의 bean으로 등록
+@Controller 
 @RequestMapping(value="/board")
 public class BoardController {
 	
