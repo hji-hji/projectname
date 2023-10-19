@@ -20,7 +20,7 @@ import com.my0803.myapp.domain.SearchCriteria;
 import com.my0803.myapp.service.BoardService;
 import com.my0803.myapp.util.UploadFileUtiles;
 
-@Controller //test
+@Controller //test !!!!!!!
 @RequestMapping(value="/board")
 public class BoardController {
 	
