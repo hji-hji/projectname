@@ -20,7 +20,7 @@ import com.my0803.myapp.domain.SearchCriteria;
 import com.my0803.myapp.service.BoardService;
 import com.my0803.myapp.util.UploadFileUtiles;
 
-@Controller 
+@Controller //test
 @RequestMapping(value="/board")
 public class BoardController {
 	
@@ -48,18 +48,18 @@ public class BoardController {
 	
 		String uploadedFileName = "";
 		if (!file.getOriginalFilename().equals("")) {
-			//¾÷·Îµå ½ÃÀÛÇÏ°Ú´Ù
+			//ì—…ë¡œë“œ ì‹œì‘í•˜ê² ë‹¤
 		 uploadedFileName = 	UploadFileUtiles.uploadFile(uploadPath, file.getOriginalFilename(), file.getBytes());
 		}
 		String ip = InetAddress.getLocalHost().getHostAddress();
 		bv.setFilename2(uploadedFileName);		
 		bv.setIp(ip);
 		
-		System.out.println("È¸¿ø¹øÈ£:"+session.getAttribute("midx"));
+		System.out.println("íšŒì›ë²ˆí˜¸:"+session.getAttribute("midx"));
 		
 		int midx = Integer.parseInt(session.getAttribute("midx").toString());
 		System.out.println("midx"+midx);
-		bv.setMidx(midx);    //·Î±×ÀÎ È¸¿øÁ¤º¸°ªÀ» bv°´Ã¼¿¡ Ãß°¡ÀûÀ¸·Î ´ã´Â´Ù
+		bv.setMidx(midx);    //ë¡œê·¸ì¸ íšŒì›ì •ë³´ê°’ì„ bvê°ì²´ì— ì¶”ê°€ì ìœ¼ë¡œ ë‹´ëŠ”ë‹¤
 		
 		int value = bs.boardInsert(bv);		
 		System.out.println("value"+value);
